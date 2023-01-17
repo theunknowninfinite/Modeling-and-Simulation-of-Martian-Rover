@@ -1,0 +1,88 @@
+#Robot name here:
+mars_rover_v8:
+  # Publish all joint states -----------------------------------
+  # Creates the /joint_states topic necessary in ROS
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50  
+
+  # Wheel Velocity Controllers ---------------------------------------
+  Left_rear_wheel_link_joint_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: Left_rear_wheel_link_joint
+    pid: {p: 10.0, i: 0.0, d: 0.0}
+  Left_middle_wheel_link_joint_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: Left_middle_wheel_link_joint
+    pid: {p: 10.0, i: 0.0, d: 0.0}
+  Left_front_wheel_link_joint_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: Left_front_wheel_link_joint
+    pid: {p: 10.0, i: 0.0, d: 0.0}
+  Right_rear_wheel_link_joint_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: Right_rear_wheel_link_joint
+    pid: {p: 10.0, i: 0.0, d: 0.0}
+  Right_middle_wheel_link_joint_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: Right_middle_wheel_link_joint
+    pid: {p: 10.0, i: 0.0, d: 0.0}
+  Right_front_wheel_link_joint_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: Right_front_wheel_link_joint
+    pid: {p: 10.0, i: 0.0, d: 0.0}
+
+  # Wheel Trees Position Controllers ---------------------------------------
+  Main_RBL_shaft_joint_controller:
+    type: effort_controllers/JointPositionController
+    joint: Main_RBL_shaft_joint
+    pid: {p: 2200.0, i: 10.0, d: 10.0}
+  Main_RBR_shaft_joint_controller:
+    type: effort_controllers/JointPositionController
+    joint: Main_RBR_shaft_joint
+    pid: {p: 4200.0, i: 10.0, d: 10.0}
+  RBL_sub_joint_controller:
+    type: effort_controllers/JointPositionController
+    joint: RBL_sub_joint
+    pid: {p: 2200.0, i: 10.0, d: 10.0}
+  RBR_sub_joint_controller:
+    type: effort_controllers/JointPositionController
+    joint: RBR_sub_joint
+    pid: {p: 2200.0, i: 10.0, d: 10.0}
+
+  # Wheel Steering Position Controllers ---------------------------------------
+  Left_rear_wheel_shaft_joint_controller:
+    type: effort_controllers/JointPositionController
+    joint: Left_rear_wheel_shaft_joint
+    pid: {p: 100.0, i: 0.0, d: 1.0}
+  Right_rear_wheel_shaft_joint_controller:
+    type: effort_controllers/JointPositionController
+    joint: Right_rear_wheel_shaft_joint
+    pid: {p: 100.0, i: 0.0, d: 1.0}
+
+  Left_front_wheel_shaft_joint_controller:
+    type: effort_controllers/JointPositionController
+    joint: Left_front_wheel_shaft_joint
+    pid: {p: 100.0, i: 0.0, d: 1.0}
+  Right_front_wheel_shaft_joint_controller:
+    type: effort_controllers/JointPositionController
+    joint: Right_front_wheel_shaft_joint
+    pid: {p: 100.0, i: 0.0, d: 1.0}
+
+  # Arm Position Controllers ---------------------------------------
+  Arm_base_joint_controller:
+    type: effort_controllers/JointPositionController
+    joint: Arm_base_joint
+    pid: {p: 500.0, i: 10.0, d: 1000.0}
+  Arm_link2_joint_controller:
+    type: effort_controllers/JointPositionController
+    joint: Arm_link2_joint
+    pid: {p: 500.0, i: 10.0, d: 1000.0}
+  Arm_link4_joint_controller:
+    type: effort_controllers/JointPositionController
+    joint: Arm_link4_joint
+    pid: {p: 500.0, i: 10.0, d: 1000.0}
+  End_effector_joint_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: End_effector_joint
+    pid: {p: 100.0, i: 10.0, d: 100.0}
