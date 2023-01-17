@@ -5,7 +5,7 @@
 ## Authors
 
 - [Suriya Suresh](https://www.github.com/theunknowninfinite)
-- [Sandip Sharan Senthil Kumar](https://github.com/Sandip2612)
+- [Sandip Sharan Senthil Kumar](https://github.com/sandipsharan)
 
 ## 1. Project Goals
 
